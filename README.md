@@ -122,7 +122,7 @@ des sous-réseaux:
 Tableau des sept couches du modèle OSI (description des rôles de chaque couche)
 
 |   Couche   |   Nom |   Rôle |
-|---    |:-:    |--:    |
+|:--:    |:-:    |---    |
 |   7   |   Application   | Service applicatif au plus proche des utilisateurs  |
 |   6   |   Présentation  | Encode, chiffre et compresse les données utiles |
 |   5   |   Session   |   Etablit des sessions entre les applications   |
@@ -133,7 +133,7 @@ Tableau des sept couches du modèle OSI (description des rôles de chaque couche
 
 Associez les différentes matériels ou protocoles aux couches
 | Matériel / Protocole  |   Couche  |
-|---    |--:    |
+|:--:    |:--:    |
 |   Ethernet    |   1   |
 |   TCP |   5   |
 |   MAC |   2   |
