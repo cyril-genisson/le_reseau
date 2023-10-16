@@ -5,7 +5,7 @@
 - Démarrage du cours: [Notions de base sur les réseaux](https://skillsforall.com/course/networking-basics?courseLang=fr-FR)
 - Téléchargement de Packet Tracer: [Packet Tracer 8.2.1](https://skillsforall.com/resources/lab-downloads?courseLang=fr-FR)
 
-![Installation de Packet Tracer] (./pictures/Job1.jpg "Cisco Packet Tracer")
+![Installation de Packet Tracer](./pictures/Job1.jpg "Cisco Packet Tracer")
 
 ## Job 2
 - Qu'est-ce qu'un réseau?
