@@ -121,7 +121,7 @@ des sous-réseaux:
 ## Job 12
 Tableau des sept couches du modèle OSI (description des rôles de chaque couche)
 
-|   Couche   |   Nom |   Rôle |
+|  **Couche**   |   **Nom** |   **Rôle** |
 |:--:    |:-:    |---    |
 |   7   |   Application   | Service applicatif au plus proche des utilisateurs  |
 |   6   |   Présentation  | Encode, chiffre et compresse les données utiles |
@@ -132,7 +132,7 @@ Tableau des sept couches du modèle OSI (description des rôles de chaque couche
 |   1   |   Physique    |   Encodage du signal, câblage et connecteurs, spécifications physiques    |
 
 Associez les différentes matériels ou protocoles aux couches
-| Matériel / Protocole  |   Couche  |
+| **Matériel / Protocole**  |   **Couche**  |
 |:--:    |:--:    |
 |   Ethernet    |   1   |
 |   TCP |   5   |
@@ -189,7 +189,7 @@ l'adresse IP en binaire:
  22     print(ip_list[i], ": ",ip_binary)
 ```
 
-| Adresse IPv4 |    format binaire |
+| **Adresse IPv4** |    **Format binaire** |
 |:--:   |:--:   |
 |   192.168.0.1 | 11000000 10101000 00000000 00000001 |
 |   145.32.59.24    |   10010001 00100000 00111011 00011000 |
