@@ -183,7 +183,8 @@ l'adresse IP en binaire:
  16         if ip_list[i][j] != "." :
  17             chaine += str(ip_list[i][j])
  18         else:
- 19             ip_binary +=str(bin(int(chaine))[2:].zfill(8))                                                                        20             chaine = ""
+ 19             ip_binary +=str(bin(int(chaine))[2:].zfill(8))
+ 20             chaine = ""
  21     ip_binary +=str(bin(int(chaine))[2:].zfill(8))
  22     print(ip_list[i], ": ",ip_binary)
 ```
