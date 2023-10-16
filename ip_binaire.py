@@ -8,7 +8,7 @@
 # Description: converti les adresses IP du Job14 en format binaire
 #
 
-ip_list = ["145.32.59.24", "200.42.129.16", "14.82.19.54"]
+ip_list = ["192.168.0.1","145.32.59.24", "200.42.129.16", "14.82.19.54"]
 
 for i in range(len(ip_list)):
     chaine, ip_binary = "", ""
@@ -16,7 +16,7 @@ for i in range(len(ip_list)):
         if ip_list[i][j] != "." :
             chaine += str(ip_list[i][j])
         else:
-            ip_binary +=str(bin(int(chaine))[2:].zfill(8))
+            ip_binary +=str(bin(int(chaine))[2:].zfill(8) + " ")
             chaine = ""
     ip_binary +=str(bin(int(chaine))[2:].zfill(8))
-    print(ip_list[i], ": ",ip_binary)
+    print(ip_list[i], "\t\t",ip_binary)

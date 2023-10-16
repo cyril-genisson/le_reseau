@@ -9,16 +9,19 @@
 
 ## Job 2
 - Qu'est-ce qu'un réseau?
+Un réseau peut être associé à la notion de graphe dans le monde mathématiques
 
 - A quoi sert un réseau informatique?
+L'utilité d'un réseau informatique est de pouvoir connecter différents éléments du 
 
 - Quel matériel avons-nous besoin pour construire un réseau?
+Si l'on reste très flou sur la technologie employée pour communiquer 
 
 ## Job 3
 Les ordinateurs de Pierre et Alice sont directement connectés entre eux sans passé par des composants
 réseaux actifs comme un switch ou un routeur. Le cable choisit doit donc être croisée pour que la
 communication puissse s'effectuée entre les deux machines. La connexion réseau est "Fast Ethernet"
-c'est-à-dire qu'elle est asynchrone bi-directionnelle ce qui permet d'avoir une vitesse de transmission
+c'est-à-dire qu'elle est asynchrone et bi-directionnelle ce qui permet d'avoir une vitesse de transmission
 de 100Mb/s au lieu des 10Mb/s en "Ethernet".
 
 ## Job 4
@@ -38,20 +41,33 @@ de 100Mb/s au lieu des 10Mb/s en "Ethernet".
 ![Screeshoot Job5 Alicia](./pictures/Job5_Pierre.jpg "IP PC Alicia")
 
 - Quelle ligne de commande avez-vous utilisée pour vérifier l'id des machines?
+```bash
+# Commande permettant d'avoir les informations réseaux
+ipconfig /all
+```
 
 ## Job 6
 
 ![Ping](./pictures/Job6_Ping.jpg "Ping des PC Pierre et Alicia")
 
 - Quelle est la commande permettant de Ping entre les PC?
+```bash
+# Commande employée sur l'ordinateur de Pierre
+ping 192.168.1.2
+
+# Commande employée sur l'ordinateur d'Alicia
+ping 192.168.1.1
+```
 
 ## Job 7
 
 ![Ping sur PC Pierre éteint](./pictures/Job7.jpg "PC Pierre éteint Ping")
 
 - Le PC de Pierre a-t-il reçu les paquets envoyés par Alicia?
-
 - Expliquez pourquoi.
+
+Le PC de Pierre n'a pas pu recevoir les paquets icmp émis par Alicia, puisque son
+ordinateur est éteint et que sa carte réseau ne traite plus les paquets envoyés par le cable réseau.
 
 ## Job 8
 
@@ -83,6 +99,19 @@ Création de 21 sous-réseau:
 - 5 sous-réseaux de 120 hôtes   10.0.0./
 - 5 sous-réseaux de 160 hôtes   10.0.0./
 
+Pour générer l'ensemble du plan d'adressage nous avons évalué au plus juste les besoins de chaque
+sous-réseaux. Donc il est possible que l'on ne puisse pas ajouter un nouvel hôte sur certain
+de ces sous-réseaux. Le calcul est effectué de tel manière que l'on essaye d'économiser au
+maximum les adresses IPs en ne prévoyant pas des sous-réseaux avec une grande perte d'adresses IPs
+non utilisées.
+
+Ci-dessous le code Python ayant servit à définir notre plan d'adressage automatiquement pour l'ensemble
+des sous-réseaux:
+```Python
+
+```
+
+
 ### Définissons le plan d'adressage
 
 - Pourquoi a-t-on choisi une adresse 10.0.0.0 de classe A
@@ -92,22 +121,34 @@ Création de 21 sous-réseau:
 ## Job 12
 Tableau des sept couches du modèle OSI (description des rôles de chaque couche)
 
+|   Couche   |   Nom |   Rôle |
+|---    |:-:    |--:    |
+|   7   |   Application   | Service applicatif au plus proche des utilisateurs  |
+|   6   |   Présentation  | Encode, chiffre et compresse les données utiles |
+|   5   |   Session   |   Etablit des sessions entre les applications   |
+|   4   |   Transport   |   Etablit, maintient et termine des sessions entre des périphériques terminaux |
+|   3   |   Réseau  |   Adresse les interfaces globalement et détermine les meilleurs chemins à travers un inter-réseau |
+|   2   |   Liaison de données  |   Adresse localement les interfaces, livre les informations localement, méthode MAC   |
+|   1   |   Physique    |   Encodage du signal, câblage et connecteurs, spécifications physiques    |
+
 Associez les différentes matériels ou protocoles aux couches
-Ethernet
-TCP
-MAC
-Fibre optique
-PPTP
-IPv4
-SSL/TLS
-TCP
-WIFI
-IPv6
-UDP
-FTP
-routeur
-HTML
-Cable RJ45
+| Matériel / Protocole  |   Couche  |
+|---    |--:    |
+|   Ethernet    |   1   |
+|   TCP |   5   |
+|   MAC |   2   |
+|   Fibre optique   |   1   |
+|   PPTP    |   5   |
+|   IPv4    |   3|
+|   SSL/TLS |   6   |
+|   TCP |   5   |
+|   WIFI    |   1   |
+|   IPv6    |   3   |
+|   UDP |   4   |
+|   FTP |   5   |
+|   routeur |   3   |
+|   HTML    |   6   |
+|   Cable RJ45  |   1   |
 
 ## JOB 13
 
@@ -147,9 +188,13 @@ l'adresse IP en binaire:
  22     print(ip_list[i], ": ",ip_binary)
 ```
 
-- 145.32.59.24:     10010001001000000011101100011000
-- 200.42.129.16:    11001000001010101000000100010000
-- 14.82.19.54:      00001110010100100001001100110110
+- 192.168.0.1              11000000 10101000 00000000 00000001
+- 145.32.59.24             10010001 00100000 00111011 00011000
+- 200.42.129.16            11001000 00101010 10000001 00010000
+- 14.82.19.54              00001110 01010010 00010011 00110110
+
+**Remarque:** On n'aurait pu se servir d'une partie du code du Job11 mais nous n'avions
+rien de mieux à faire que de réinventer la roue...
 
 ## JOB 15
 
