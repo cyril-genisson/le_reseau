@@ -5,7 +5,7 @@
 - Démarrage du cours: [Notions de base sur les réseaux](https://skillsforall.com/course/networking-basics?courseLang=fr-FR)
 - Téléchargement de Packet Tracer: [Packet Tracer 8.2.1](https://skillsforall.com/resources/lab-downloads?courseLang=fr-FR)
 
-![Installation de Packet Tracer] (./pictures/install_PT.jpg "Cisco Packet Tracer")
+![Installation de Packet Tracer] (./pictures/Job1.jpg "Cisco Packet Tracer")
 
 ## Job 2
 - Qu'est-ce qu'un réseau?
@@ -78,10 +78,10 @@ de 100Mb/s au lieu des 10Mb/s en "Ethernet".
 ## Job 11
 Attribution d'une adresse de classe A 10.0.0.0
 Création de 21 sous-réseau:
-- 1 sous-réseau de 12 hôtes
-- 5 sous-réseaux de 30 hôtes
-- 5 sous-réseaux de 120 hôtes
-- 5 sous-réseaux de 160 hôtes
+- 1 sous-réseau de 12 hôtes     10.0.0./
+- 5 sous-réseaux de 30 hôtes    10.0.0./
+- 5 sous-réseaux de 120 hôtes   10.0.0./
+- 5 sous-réseaux de 160 hôtes   10.0.0./
 
 ### Définissons le plan d'adressage
 
@@ -158,5 +158,6 @@ l'adresse IP en binaire:
 - Qu'est-ce qu'un qateway?
 
 - Qu'est-ce qu'un VPN?
-
+Virtual Private Network
 - Qu'est-ce qu'un DNS?
+Domain Name Service
