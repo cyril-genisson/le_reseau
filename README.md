@@ -5,7 +5,7 @@
 - Démarrage du cours: [Notions de base sur les réseaux](https://skillsforall.com/course/networking-basics?courseLang=fr-FR)
 - Téléchargement de Packet Tracer: [Packet Tracer 8.2.1](https://skillsforall.com/resources/lab-downloads?courseLang=fr-FR)
 
-![Installation de Packet Tracer] (./pictures/install_packet_tracer_job1.jpg "Cisco Packet Tracer")
+![Installation de Packet Tracer] (./pictures/install_PT.jpg "Cisco Packet Tracer")
 
 ## Job 2
 - Qu'est-ce qu'un réseau?
@@ -147,9 +147,10 @@ l'adresse IP en binaire:
  22     print(ip_list[i], ": ",ip_binary)
 ```
 
-145.32.59.24 :  10010001001000000011101100011000
-200.42.129.16 :  11001000001010101000000100010000
-14.82.19.54 :  00001110010100100001001100110110
+- 145.32.59.24:     10010001001000000011101100011000
+- 200.42.129.16:    11001000001010101000000100010000
+- 14.82.19.54:      00001110010100100001001100110110
+
 ## JOB 15
 
 - Qu'est-ce que le routage?
