@@ -9,16 +9,25 @@
 
 ## Job 2
 - Qu'est-ce qu'un réseau?
-Un réseau peut être associé à la notion de graphe dans le monde mathématiques
+
+Ensemble d'objets interconnectés les uns aux autres permettant de faire
+circuler des éléments entre chacun de ces objets selon des règles bien
+définies (ex: réseau routier, réseau d'eau, réseau électrique...)
 
 - A quoi sert un réseau informatique?
-L'utilité d'un réseau informatique est de pouvoir connecter différents éléments du 
+
+Un réseau informatique sert par à faire circuler de l'information entre les ordinateurs,
+terminaux et objets interconnectés.
 
 - Quel matériel avons-nous besoin pour construire un réseau?
-Si l'on reste très flou sur la technologie employée pour communiquer 
+
+Pour construire un réseau informatique nous avons besoin:
+d'une couche physique (carte réseau (Ethernet/Wifi/Fibre), switch/Access Point Wireless, routeur, cables)
+de protocoles d'adressages et de communications
+d'applications pour traiter et transmettre les informations
 
 ## Job 3
-Les ordinateurs de Pierre et Alice sont directement connectés entre eux sans passé par des composants
+Les ordinateurs de Pierre et Alicia sont directement connectés entre eux sans passé par des composants
 réseaux actifs comme un switch ou un routeur. Le cable choisit doit donc être croisée pour que la
 communication puissse s'effectuée entre les deux machines. La connexion réseau est "Fast Ethernet"
 c'est-à-dire qu'elle est asynchrone et bi-directionnelle ce qui permet d'avoir une vitesse de transmission
@@ -27,11 +36,25 @@ de 100Mb/s au lieu des 10Mb/s en "Ethernet".
 ## Job 4
 - Qu'est-ce qu'une adresse IP?
 
+C'est un numéro d'identification unique attribué de façon provosoire ou permanente
+à chaque périphérique faisant partie d'un même réseau informatique utilisant l'Internet Protocol.
+
 - A quoi sert un IP?
+
+Une IP sert à déterminer de manière unique un élément du réseau (comme une adresse postale en somme)
 
 - Qu'est-ce qu'une adresse MAC?
 
+Une adresse MAC (Media Access Control) est un identifiant physique stocké dans une interface réseau.
+Elle est unique au monde. Cette adresse est la partie inférieure de la couche liaison.
+
 - Qu'est-ce qu'une IP publique et privé?
+
+Une adresse IP publique est attribué par le fournisseur d'accès à internet au routeur faisant office de
+passerelle entre un sous-réseau privé et Internet. Elle est accessible et identifiable par tous.
+
+Une adresse IP privée est une adresse d'un sous-réseau local seulement accessible depuis les terminaux
+appartenant à ce même sous-réseau.
 
 ![Screenshoot Job4](./pictures/Job4.jpg "Pair à Pair")
 
@@ -72,12 +95,78 @@ ordinateur est éteint et que sa carte réseau ne traite plus les paquets envoy�
 ## Job 8
 
 - Quelle est la différence entre un hub et un switch?
-
 - Comment fonctionne un hub et quels sont ses avantages et ses inconvénients?
-
 - Quels sont les avantages et inconvénients d'un switch?
-
 - Comment un switch gère-t'il le réseau?
+
+En utilisant un hub, chaque équipement attaché à celui-ci partage le même domaine de diffusion ainsi
+que le même domaine de collision2. Comme dans tout segment de réseau Ethernet, une seule des machines
+connectées peut y transmettre à la fois. Dans le cas contraire, une collision se produit, les machines
+concernées doivent retransmettre leurs trames après avoir attendu un temps calculé aléatoirement par
+chaque émetteur.
+
+Ce dispositif est un répéteur de données ne permettant pas de protection particulière des données
+et transmettant les trames à toutes les machines connectées par opposition au commutateur réseau
+(en anglais switch) qui dirige les données uniquement vers la machine destinataire. Ceci le rend
+vulnérable aux attaques par Analyseur de paquets. Il permet également d'étendre un réseau local (LAN)
+mais ne permet pas de le transformer en un réseau étendu (WAN).
+
+On peut mettre au maximum 4 hubs Ethernet séparés par un câble de 100 mètres
+(Distance maximale théorique de transfert via câble Ethernet. La fibre optique quant à elle pourrait
+permettre des séparations allant jusqu'à plusieurs kilomètres.), soit 300 m de câble. L'interface réseau
+envoie d'abord un préambule de synchronisation avant d'envoyer le paquet afin de limiter le nombre de collisions.
+Cependant, s'il y a une collision, les deux machines qui veulent « parler » tireront un nombre 
+au sort (correspondant à une durée) qui sera additionné au timestamp, durée aller-retour.
+Une collision est détectée quand le paquet n'est plus compréhensible par la ou les interface(s) réseau.
+
+Pour ces raisons, ce type d'appareil a tendance à tomber en désuétude au profit du commutateur réseau.
+
+Le hub possède deux types de ports ou connecteurs physiques :
+
+1) les ports pour la connexion des machines ;
+2) le port pour extension du réseau auquel se connecte un autre concentrateur 
+(il n'y en a généralement qu'un seul par concentrateur). Ce type de port est identique
+au précédent à l'exception du câblage qui est inversé (on peut aussi utiliser un câble
+à connecteur RJ45 croisé pour y connecter un ordinateur supplémentaire).
+
+Un commutateur réseau, ou switch, est un équipement qui relie plusieurs segments (câbles ou fibres)
+dans un réseau informatique et de télécommunication et qui permet de créer des circuits virtuels.
+La commutation est un des deux modes de transport de trame au sein des réseaux informatiques et de
+communication, l'autre étant le routage1. Dans les réseaux locaux (LAN), il s'agit le plus souvent
+d'un boîtier disposant de plusieurs ports RJ45 (entre 4 et plusieurs centaines), il a donc la même
+apparence qu'un concentrateur (hub). Il existe aussi des commutateurs pour tous les types de réseau
+en mode point à point comme pour les réseaux ATM, relais de trames, etc.
+
+Contrairement à un concentrateur, un commutateur ne reproduit pas sur tous les ports chaque trame qu'il
+reçoit : il sait déterminer sur quel port il doit envoyer une trame, en fonction de l'adresse de destination
+de cette trame. Les commutateurs sont souvent utilisés pour remplacer des concentrateurs car ils encombrent
+moins le réseau. Dans le cas d'un réseau IP/Ethernet, un commutateur ne s'intéresse pas à la même couche
+OSI que le routeur, ils utilisent respectivement les adresses MAC et les adresses IP pour diriger les données.
+Concrètement, pour une adresse qui peut être partiellement connue, une trame est toujours émise sur le même port,
+quel que soit l'état du trafic, une fois ses tables de routage et de communication remplies. Le routeur,
+lui, cherche à déterminer la meilleure route, il est susceptible de générer moins de trafic pour des grands
+réseaux.
+
+Il est fréquent qu'un commutateur intègre, par exemple, le Spanning Tree Protocol que l'on rencontre dans
+les ponts. Le commutateur est d'ailleurs souvent vu d'une manière réductrice comme un pont multiport.
+
+Le commutateur établit et met à jour une table, dans le cas du commutateur pour un réseau Ethernet il
+s'agit de la table d'adresses MAC, qui lui indique sur quels ports diriger les trames destinées à une
+adresse MAC donnée, en fonction des adresses MAC source des trames reçues sur chaque port. Le commutateur
+construit donc dynamiquement une table qui associe numéro de port et adresses MAC.
+
+Lorsqu'il reçoit une trame destinée à une adresse présente dans cette table, le commutateur renvoie la
+trame sur le port correspondant. Si le port de destination est le même que celui de l'émetteur, la trame
+n'est pas transmise. Si l'adresse du destinataire est inconnue dans la table, alors la trame est traitée
+comme un broadcast, c'est-à-dire qu'elle est transmise à tous les ports du commutateur à l'exception du port
+d'émission.
+
+Un commutateur de niveau 2 est similaire à un concentrateur dans le sens où il fournit un seul domaine de
+diffusion. En revanche, chaque port a son propre domaine de collision. Le commutateur utilise la
+micro-segmentation pour diviser les domaines de collision, un par segment connecté. Ainsi, seules les
+interfaces réseau directement connectées par un lien point à point sollicitent le medium. Si le commutateur
+auquel il est connecté prend en charge le full-duplex, le domaine de collision est éliminé.
+
 
 ## Job 9
 
@@ -93,7 +182,7 @@ ordinateur est éteint et que sa carte réseau ne traite plus les paquets envoy�
 
 ## Job 11
 Attribution d'une adresse de classe A 10.0.0.0
-Création de 21 sous-réseau:
+Création de 16 sous-réseau(x) pour 322 hôtes:
 - 1 sous-réseau de 12 hôtes     10.0.0./
 - 5 sous-réseaux de 30 hôtes    10.0.0./
 - 5 sous-réseaux de 120 hôtes   10.0.0./
@@ -153,7 +242,7 @@ Associez les différentes matériels ou protocoles aux couches
 ## JOB 13
 
 - Quell est l'architecture de ce réseau?
-
+Taupologie en étoile
 - Indiquer quelle est l'adresse IP du réseau?
 192.168.10.0/24
 

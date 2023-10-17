@@ -10,6 +10,22 @@
 # nombre de postes dans le sous-réseau.
 #
 
+############################################################
+#
+# Les éléments à adapter pour le pour l'adressage
+#
+############################################################
+# Classe d'IP attribuées
+Ip = "192.168.225.15"
+# Liste de sous-réseau (Nombre_reseau, Nombre_IP) pour le plan d'adressage
+Networks=[(1, 12), (5, 30), (5, 120), (5, 160)]
+
+############################################################
+#
+# Définitions des classes IPs
+#
+############################################################
+
 # Définition des différentes classes de réseau
 IpClass={"A": [[0,0,0,1], [126,255,255,254]], \
         "B": [[128,0,0,1], [191,255,255,254]], \
@@ -18,8 +34,32 @@ IpClass={"A": [[0,0,0,1], [126,255,255,254]], \
         "E": [[240,0,0,0], [247,255,255,255]] \
        }
 
+# Liste du nombre d'hôtes disponibles en fonction du mask de sous-réseau
+NbHosts=[(32, 1), (31, 2)]
+for k in range(2, 32):
+    NbHosts.append((32-k, 2**k - 2))
+
+############################################################
+#
+# Définitions des fonctions utiles pour le traitement
+#
+############################################################
+def bin2int(octet):
+    # Convertie un octet en entier (Fonction ok).
+    integer = 0
+    for k in range(len(octet)):
+        if octet[k] == '1':
+            integer += 2**(7-k)
+    return integer
+
+
+def int2bin(integer):
+    # Convertie un entier en binaire (Fonction ok)
+    return bin(integer)[2:].zfill(8)
+
 
 def ClassDefine(l):
+    # Retourne la classe de l'adresse IP (Fonction ok)
     if Ip[0] >= IpClass["A"][0][0] and Ip[0] <= IpClass["A"][1][0]:
         return "A"
     elif Ip[0] >= IpClass["B"][0][0] and Ip[0] <= IpClass["B"][1][0]:
@@ -35,34 +75,54 @@ def ClassDefine(l):
         exit(1)
 
 
-def IpToBin(ip):
-    # Retourne l'adresse IP [x,x,x,x] sous la forme d'une liste de 32 éléments
-    l, x = [], ""
-    for i in range(len(ip)):
-        x += str(bin(ip[i])[2:].zfill(8))
-    print(x)    
-    for i in range(len(x)):
-        l.append(int(x[i]))
-    return l
+def ip2bin(ip):
+    # Retourne l'adresse IP en une chaine binaire 00000000.00000000.00000000.00000000 (Fonction ok)
+    ipL = ip.split(".")
+    binary = ""
+    for k in range(len(ipL) - 1):
+        binary += int2bin(int(ipL[k])) + "."
+    binary += int2bin(int(ipL[3]))
+    return binary
 
 
-def ReservedAdress(ip):
-    l=[]
-    for k in range(2):
-        l.append(ip)
-    print(l)
-    l[0][3], l[1][3] = 0, 255
-    return l[0],l[1]
+def bin2ip(binary):
+    # Retourne une IP binaire sous la fome d'une adresse IP décimale (Fonction ok)
+    ipB = binary.split(".")
+    ip = ""
+    for i in range(len(ipB) - 1):
+        ip += str(bin2int(ipB[i])) + "."
+    ip += str(bin2int(ipB[3]))
+    return ip
 
 
-def MaskNetwork(network):
-    # la fonction MaskNetwork prend le nombre d'hôtes du sous-réseau pour calculer le masque nécessaire
-    # au format CIDR (Classless Inter Domain Routing)
-    return(32 - len(bin(network)[2:]))
+def mask2bin(cidr):
+    binary=""
+    for k in range(cidr)
+        if k % 8:
+            binary += "." + "1"
+        else:
+            binary += "1"
+    
+    return binary
 
 
-# Classe d'IP attribuées
-Ip = [10,0,0,0]
-Networks=[(1, 12), (5, 30), (5, 120), (5, 160)]
+def bin2mask(binary):
+    return mask
 
-print(MaskNetwork(120))
+
+def PrintNetwork(network):
+    sumL, sumH = 0, 0
+    for k in range(len(network)):
+        sumL += network[k][0]
+        sumH += network[k][1]
+    print(f"Attribution d'une adresse de classe {ClassDefine(Ip)} {Ip[0]}.{Ip[1]}.{Ip[2]}.{Ip[3]}")
+    print(f"Création de {sumL} sous-réseau(x) pour {sumH} hôtes:")
+    for i in range(len(network)):
+        for j in range(network[i][0]):
+            netmask = MaskNetwork(network[i][1])
+           # print(f"Réseau {}/{netmask}")
+           # print(f"\t Adresse de broadcast {}"}
+           # print(f"\t Première adresse utilisable {}")
+           # print(f"\t Dernière adresse utilisable {}")
+           # print(f"\t Nombre d'hôtes utilisables {}")
+           # print(f"\t Nombre de sous-réseaux {}")
