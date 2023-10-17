@@ -224,13 +224,12 @@ Associez les différentes matériels ou protocoles aux couches
 | **Matériel / Protocole**  |   **Couche**  |
 |:--:    |:--:    |
 |   Ethernet    |   1   |
-|   TCP |   5   |
+|   TCP |   4   |
 |   MAC |   2   |
 |   Fibre optique   |   1   |
-|   PPTP    |   5   |
-|   IPv4    |   3|
+|   PPTP    |   2   |
+|   IPv4    |   3   |
 |   SSL/TLS |   6   |
-|   TCP |   5   |
 |   WIFI    |   1   |
 |   IPv6    |   3   |
 |   UDP |   4   |
@@ -292,9 +291,54 @@ rien de mieux à faire que de réinventer la roue...
 
 - Qu'est-ce que le routage?
 
-- Qu'est-ce qu'un qateway?
+Le routage est le processus de sélection du chemin dans un réseau. Un réseau informatique est
+composé de nombreuses machines, appelées nœuds, et de chemins ou de liaisons qui relient ces nœuds.
+La communication entre deux nœuds d'un réseau interconnecté peut s'effectuer par de nombreux
+chemins différents. Le routage est le processus qui consiste à sélectionner le meilleur chemin
+à l'aide de certaines règles prédéterminées.
+
+- Qu'est-ce qu'un gateway?
+
+Une passerelle, ou gateway, s’exploite dans les réseaux de télécommunications afin de permettre aux
+données de circuler d'un réseau à un autre. Les passerelles se distinguent des routeurs ou des commutateurs
+en ce sens qu'elles communiquent en exploitant plus d'un protocole pour connecter un ensemble de réseaux
+et peuvent fonctionner sur n'importe laquelle des sept couches du modèle d'interconnexion des systèmes
+ouverts (OSI).
+ 
+Une passerelle réseau, ou network gateway, assure l'interopérabilité entre les réseaux et contient
+des dispositifs, tels que :
+- des traducteurs de protocole,
+- des adaptateurs d'impédance (la pratique consistant à maximiser le transfert de puissance ou à
+minimiser la réflexion du signal par la charge),
+- des convertisseurs de taux,
+- des isolateurs de défauts, un défaut désignant une condition anormale ou un défaut au niveau
+d'un composant, d'un équipement ou d'un sous-système qui peut entraîner une défaillance,
+- des traducteurs de signaux.
+ 
+Une passerelle réseau nécessite l'établissement de procédures administratives mutuellement acceptables
+entre les réseaux utilisant la passerelle.
+ 
+Les passerelles de réseau peuvent effectuer des conversions de protocole pour connecter des réseaux
+exploitant différentes technologies de protocole de réseau. Par exemple, une passerelle de réseau
+relie un intranet de bureau ou domestique à Internet. Si l’internaute veut charger une page web, il accède
+à au moins deux passerelles de réseau : une pour passer du réseau du bureau ou de la maison à Internet
+et une pour passer d’ Internet à l'ordinateur qui sert la page web.
 
 - Qu'est-ce qu'un VPN?
-Virtual Private Network
+
+VPN signifie Virtual Private Network, que l'on peut traduire en français : réseau privé virtuel,
+ce qui nous donne RPV. Mais, dans la pratique nous entendons toujours parler de VPN.
+L'objectif est de créer un lien virtuel entre deux points, par exemple entre deux réseaux d'entreprise,
+ou entre un PC client et un réseau d'entreprise. Au sein de ce lien, les données seront sécurisées et
+isolées du reste du traffic, c'est là tout l'intérêt du VPN et cette notion de "privé". Le VPN permet de
+créer une extension virtuelle de votre réseau local jusqu'à un autre réseau (site) ou jusqu'à un
+poste de travail distant.
+
+Le VPN va chiffrer les données de bout-en-bout, c'est-à-dire de l'équipement qui
+ouvre le tunnel jusqu'à son point de terminaison. Grâce à cela, il renforce la confidentialité
+des échanges au travers de réseaux non sécurisés
+
 - Qu'est-ce qu'un DNS?
-Domain Name Service
+Le Domain Name System (ou DNS, système de noms de domaine) est un service permettant
+d'établir une correspondance entre une adresse IP et un nom de domaine et, plus généralement,
+de trouver une information à partir d'un nom de domaine.
