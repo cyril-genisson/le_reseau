@@ -17,7 +17,7 @@
 ############################################################
 # Classe d'IP attribuées
 Ip = "192.168.225.15"
-# Liste de sous-réseau (Nombre_reseau, Nombre_IP) pour le plan d'adressage
+# Liste de sous-réseaux (Nombre_reseau, Nombre_IP) pour le plan d'adressage
 Networks=[(1, 12), (5, 30), (5, 120), (5, 160)]
 
 ############################################################
@@ -38,7 +38,7 @@ IpClass={"A": [[0,0,0,1], [126,255,255,254]], \
 NbHosts=[(32, 1), (31, 2)]
 for k in range(2, 32):
     NbHosts.append((32-k, 2**k - 2))
-
+print(NbHosts)
 ############################################################
 #
 # Définitions des fonctions utiles pour le traitement
@@ -94,16 +94,19 @@ def bin2ip(binary):
     ip += str(bin2int(ipB[3]))
     return ip
 
+def findcidr(nbhosts):
+    # Détermine le masque réseau au format cidr pour le nombre d'hôtes souhaité sur le sous-réseau (Fonction ok)
+    k = 0
+    while nbhosts > NbHosts[k][1]:
+        k += 1
+    return NbHosts[k][0]
 
-def mask2bin(cidr):
-    binary=""
-    for k in range(cidr)
-        if k % 8:
-            binary += "." + "1"
-        else:
-            binary += "1"
-    
-    return binary
+
+def NbLan(IpClass, cidr):
+    # Permet de déterminer le nombre de sous-réseaux disponibles
+    # en fonction du mask et de la classe de réseau
+     bitClass={"A": 8, "B": 16, "C": 24, "D": 32}
+     return 2**(cidr -bitClass[IpClass])
 
 
 def bin2mask(binary):
