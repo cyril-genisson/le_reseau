@@ -181,12 +181,98 @@ auquel il est connecté prend en charge le full-duplex, le domaine de collision 
 - Quelle est la différence entre une adresse IP statique et une adresse IP attribuée par DHCP?
 
 ## Job 11
-Attribution d'une adresse de classe A 10.0.0.0
+```bash
+/******************************************************\
+                    Plan d'adressage
+\******************************************************/
+Attribution d'une adresse de classe A: 10.0.0.0
 Création de 16 sous-réseau(x) pour 322 hôtes:
-- 1 sous-réseau de 12 hôtes     10.0.0./
-- 5 sous-réseaux de 30 hôtes    10.0.0./
-- 5 sous-réseaux de 120 hôtes   10.0.0./
-- 5 sous-réseaux de 160 hôtes   10.0.0./
+
+****************************************************
+        CIDR: 28        NETMASK= 255.255.255.240
+         Nombre d'hôtes utilisables 14
+****************************************************
+Réseau 10.0.0.0/28
+         Adresse de broadcast 10.0.0.15
+         Première adresse utilisable 10.0.0.1
+         Dernière adresse utilisable 10.0.0.14
+
+****************************************************
+        CIDR: 27        NETMASK= 255.255.255.224
+         Nombre d'hôtes utilisables 30
+****************************************************
+Réseau 10.0.0.0/27
+         Adresse de broadcast 10.0.0.31
+         Première adresse utilisable 10.0.0.1
+         Dernière adresse utilisable 10.0.0.30
+Réseau 10.0.1.0/27
+         Adresse de broadcast 10.0.1.31
+         Première adresse utilisable 10.0.1.1
+         Dernière adresse utilisable 10.0.1.30
+Réseau 10.0.2.0/27
+         Adresse de broadcast 10.0.2.31
+         Première adresse utilisable 10.0.2.1
+         Dernière adresse utilisable 10.0.2.30
+Réseau 10.0.3.0/27
+         Adresse de broadcast 10.0.3.31
+         Première adresse utilisable 10.0.3.1
+         Dernière adresse utilisable 10.0.3.30
+Réseau 10.0.4.0/27
+         Adresse de broadcast 10.0.4.31
+         Première adresse utilisable 10.0.4.1
+         Dernière adresse utilisable 10.0.4.30
+
+****************************************************
+        CIDR: 25        NETMASK= 255.255.255.128
+         Nombre d'hôtes utilisables 126
+****************************************************
+Réseau 10.0.0.0/25
+         Adresse de broadcast 10.0.0.127
+         Première adresse utilisable 10.0.0.1
+         Dernière adresse utilisable 10.0.0.126
+Réseau 10.0.1.0/25
+         Adresse de broadcast 10.0.1.127
+         Première adresse utilisable 10.0.1.1
+         Dernière adresse utilisable 10.0.1.126
+Réseau 10.0.2.0/25
+         Adresse de broadcast 10.0.2.127
+         Première adresse utilisable 10.0.2.1
+         Dernière adresse utilisable 10.0.2.126
+Réseau 10.0.3.0/25
+         Adresse de broadcast 10.0.3.127
+         Première adresse utilisable 10.0.3.1
+         Dernière adresse utilisable 10.0.3.126
+Réseau 10.0.4.0/25
+         Adresse de broadcast 10.0.4.127
+         Première adresse utilisable 10.0.4.1
+         Dernière adresse utilisable 10.0.4.126
+
+****************************************************
+        CIDR: 24        NETMASK= 255.255.255.0
+         Nombre d'hôtes utilisables 254
+****************************************************
+Réseau 10.0.0.0/24
+         Adresse de broadcast 10.0.0.255
+         Première adresse utilisable 10.0.0.1
+         Dernière adresse utilisable 10.0.0.254
+Réseau 10.0.1.0/24
+         Adresse de broadcast 10.0.1.255
+         Première adresse utilisable 10.0.1.1
+         Dernière adresse utilisable 10.0.1.254
+Réseau 10.0.2.0/24
+         Adresse de broadcast 10.0.2.255
+         Première adresse utilisable 10.0.2.1
+         Dernière adresse utilisable 10.0.2.254
+Réseau 10.0.3.0/24
+         Adresse de broadcast 10.0.3.255
+         Première adresse utilisable 10.0.3.1
+         Dernière adresse utilisable 10.0.3.254
+Réseau 10.0.4.0/24
+         Adresse de broadcast 10.0.4.255
+         Première adresse utilisable 10.0.4.1
+         Dernière adresse utilisable 10.0.4.254
+```
+
 
 Pour générer l'ensemble du plan d'adressage nous avons évalué au plus juste les besoins de chaque
 sous-réseaux. Donc il est possible que l'on ne puisse pas ajouter un nouvel hôte sur certain
@@ -194,12 +280,11 @@ de ces sous-réseaux. Le calcul est effectué de tel manière que l'on essaye d'
 maximum les adresses IPs en ne prévoyant pas des sous-réseaux avec une grande perte d'adresses IPs
 non utilisées.
 
-Ci-dessous le code Python ayant servit à définir notre plan d'adressage automatiquement pour l'ensemble
-des sous-réseaux:
-```Python
+[Référence vers le petit programme Python faisant le travail](https://github.com/cyril-genisson/le_reseau/blob/main/AdressPlan.py)
 
+```bash
+./AdressPlan.py
 ```
-
 
 ### Définissons le plan d'adressage
 
