@@ -1,5 +1,12 @@
 # Le réseau
 
+## Une fois n'est pas coutume...
+Avant de commencer à discuter Job, je tiens à prévenir le lecteur qu'il est possible de la mise en page du document
+soit un peu négligé. Je prie le lecteur d'être indulgeant sur ce fait car j'ai essayé de voir si écrire la documentation
+en MarkDown et la convertir par la suite en PDF pouvait être une solution viable pour les autres projets. Puisque vous avez
+accès au code de ce document [README.md](https://github.com/cyril-genisson/le_reseau/blob/main/README.md) toute remarque
+sera la bienvenue.
+
 ## Job 1: Installation de Cisco Packet Tracer
 - Inscription sur la page: [skillsforall.com](https://skillsforall.com/)
 - Démarrage du cours: [Notions de base sur les réseaux](https://skillsforall.com/course/networking-basics?courseLang=fr-FR)
@@ -30,7 +37,7 @@ d'applications pour traiter et transmettre les informations
 Les ordinateurs de Pierre et Alicia sont directement connectés entre eux sans passé par des composants
 réseaux actifs comme un switch ou un routeur. Le cable choisit doit donc être croisée pour que la
 communication puissse s'effectuée entre les deux machines. La connexion réseau est "Fast Ethernet"
-c'est-à-dire qu'elle est asynchrone et bi-directionnelle ce qui permet d'avoir une vitesse de transmission
+c'est-à-dire qu'elle est asynchrone et bi-directionnelle **Full Duplex** ce qui permet d'avoir une vitesse de transmission
 de 100Mb/s au lieu des 10Mb/s en "Ethernet".
 
 ## Job 4
@@ -100,7 +107,7 @@ ordinateur est éteint et que sa carte réseau ne traite plus les paquets envoy�
 - Comment un switch gère-t'il le réseau?
 
 En utilisant un hub, chaque équipement attaché à celui-ci partage le même domaine de diffusion ainsi
-que le même domaine de collision2. Comme dans tout segment de réseau Ethernet, une seule des machines
+que le même domaine de collision. Comme dans tout segment de réseau Ethernet, une seule des machines
 connectées peut y transmettre à la fois. Dans le cas contraire, une collision se produit, les machines
 concernées doivent retransmettre leurs trames après avoir attendu un temps calculé aléatoirement par
 chaque émetteur.
@@ -132,7 +139,7 @@ au précédent à l'exception du câblage qui est inversé (on peut aussi utilis
 Un commutateur réseau, ou switch, est un équipement qui relie plusieurs segments (câbles ou fibres)
 dans un réseau informatique et de télécommunication et qui permet de créer des circuits virtuels.
 La commutation est un des deux modes de transport de trame au sein des réseaux informatiques et de
-communication, l'autre étant le routage1. Dans les réseaux locaux (LAN), il s'agit le plus souvent
+communication, l'autre étant le routage. Dans les réseaux locaux (LAN), il s'agit le plus souvent
 d'un boîtier disposant de plusieurs ports RJ45 (entre 4 et plusieurs centaines), il a donc la même
 apparence qu'un concentrateur (hub). Il existe aussi des commutateurs pour tous les types de réseau
 en mode point à point comme pour les réseaux ATM, relais de trames, etc.
@@ -173,15 +180,27 @@ auquel il est connecté prend en charge le full-duplex, le domaine de collision 
 - Faire un schéma de votre réseau
 (Doit représenter la topologie et la configuration du réseau en incluant les composants)
 
+![Schéma du réseau](./pictures/DiagrammeResau.jpg "Réseau")
+
 
 - Identifier au moins trois avantages importants d'avoir un schéma
+
+    1) Pour la planification des besoins
+    2) La localisation des ressources
+    3) La transmission des informations
 
 ## Job 10
 
 - Quelle est la différence entre une adresse IP statique et une adresse IP attribuée par DHCP?
 
+Une adresse IP statique est immuable jusqu'au changement de la configuration du poste.
+Une adresse IP dynamique est attribuée durant un certain temps (Lease) jusqu'à la libération
+programmée de la ressource. Elle pourra alors être réattribuée à un notre équipement. Cela permet
+donc une mutualisation de la ressource.
+
+
 ## Job 11
-```bash
+```Txt
 /******************************************************\
                     Plan d'adressage
 \******************************************************/
@@ -288,9 +307,17 @@ non utilisées.
 
 ### Définissons le plan d'adressage
 
-- Pourquoi a-t-on choisi une adresse 10.0.0.0 de classe A
+- Pourquoi a-t-on choisi une adresse 10.0.0.0 de classe A?
+
+Une adresse de classe A permet d'adressé plus de deux millions d'adresses IP sur un même réseau.
+Dans notre cas cela ne sert pas à grand chose. On aurait très bien pu utilisé un réseau de classe C
+pour faire le même travail au vu de la faiblesse du nombre de sous-réseaux nécessaires pour faire notre
+plan d'adressage.
 
 - Quelle est la différence entre les différents types d'adresses?
+
+Principalement, si l'on occulte le nombre d'adresses IP disponibles d'une classe donnée, cela permet d'obtenir un
+nombre de sous réseaux plus conséquent en fonction de la taille du masque choisi.
 
 ## Job 12
 Tableau des sept couches du modèle OSI (description des rôles de chaque couche)
@@ -326,11 +353,15 @@ Associez les différentes matériels ou protocoles aux couches
 ## JOB 13
 
 - Quell est l'architecture de ce réseau?
+
 Taupologie en étoile
+
 - Indiquer quelle est l'adresse IP du réseau?
+
 192.168.10.0/24
 
 - Quelle est l'adresse de diffusion de ce réseau?
+
 192.168.10.255
 
 ## JOB 14
@@ -424,6 +455,7 @@ ouvre le tunnel jusqu'à son point de terminaison. Grâce à cela, il renforce l
 des échanges au travers de réseaux non sécurisés
 
 - Qu'est-ce qu'un DNS?
+
 Le Domain Name System (ou DNS, système de noms de domaine) est un service permettant
 d'établir une correspondance entre une adresse IP et un nom de domaine et, plus généralement,
 de trouver une information à partir d'un nom de domaine.
