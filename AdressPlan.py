@@ -109,8 +109,21 @@ def NbLan(IpClass, cidr):
      return 2**(cidr -bitClass[IpClass])
 
 
-def bin2mask(binary):
-    return mask
+def cidr2mask(cidr):
+    # Converti le format CIDR du masque en masque xxx.xxx.xxx.xxx
+    chaine = ""
+    for k in range(1, cidr + 1):
+        if k % 8 == 0:
+            chaine += "1" + "."
+        else:
+            chaine += "1"
+    for k in range(cidr + 1, 32):
+        if k % 8 == 0:
+            chaine += "0" + "."
+        else:
+            chaine += "0"
+    chaine += "0"
+    return bin2ip(chaine)
 
 
 def PrintNetwork(network):
@@ -129,3 +142,4 @@ def PrintNetwork(network):
            # print(f"\t Dernière adresse utilisable {}")
            # print(f"\t Nombre d'hôtes utilisables {}")
            # print(f"\t Nombre de sous-réseaux {}")
+
