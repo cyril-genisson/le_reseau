@@ -23,7 +23,7 @@ définies (ex: réseau routier, réseau d'eau, réseau électrique...)
 
 - A quoi sert un réseau informatique?
 
-Un réseau informatique sert par à faire circuler de l'information entre les ordinateurs,
+Un réseau informatique sert à faire circuler de l'information entre les ordinateurs,
 terminaux et objets interconnectés.
 
 - Quel matériel avons-nous besoin pour construire un réseau?
@@ -34,7 +34,7 @@ de protocoles d'adressages et de communications
 d'applications pour traiter et transmettre les informations
 
 ## Job 3
-Les ordinateurs de Pierre et Alicia sont directement connectés entre eux sans passé par des composants
+Les ordinateurs de Pierre et Alicia sont directement connectés entre eux sans passer par des composants
 réseaux actifs comme un switch ou un routeur. Le cable choisit doit donc être croisée pour que la
 communication puissse s'effectuée entre les deux machines. La connexion réseau est "Fast Ethernet"
 c'est-à-dire qu'elle est asynchrone et bi-directionnelle **Full Duplex** ce qui permet d'avoir une vitesse de transmission
