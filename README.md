@@ -347,7 +347,7 @@ Associez les différentes matériels ou protocoles aux couches
 |   UDP |   4   |
 |   FTP |   5   |
 |   routeur |   3   |
-|   HTML    |   6   |
+|   HTML    |   7   |
 |   Cable RJ45  |   1   |
 
 ## JOB 13
