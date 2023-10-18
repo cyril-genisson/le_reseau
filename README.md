@@ -336,7 +336,7 @@ Associez les différentes matériels ou protocoles aux couches
 | **Matériel / Protocole**  |   **Couche**  |
 |:--:    |:--:    |
 |   Ethernet    |   1   |
-|   TCP |   4   |
+|   TCP |   4-5   |
 |   MAC |   2   |
 |   Fibre optique   |   1   |
 |   PPTP    |   2   |
@@ -344,8 +344,8 @@ Associez les différentes matériels ou protocoles aux couches
 |   SSL/TLS |   6   |
 |   WIFI    |   1   |
 |   IPv6    |   3   |
-|   UDP |   4   |
-|   FTP |   5   |
+|   UDP |   4-5   |
+|   FTP |   6-7   |
 |   routeur |   3   |
 |   HTML    |   7   |
 |   Cable RJ45  |   1   |
