@@ -97,7 +97,7 @@ ping 192.168.1.1
 - Expliquez pourquoi.
 
 Le PC de Pierre n'a pas pu recevoir les paquets icmp émis par Alicia, puisque son
-ordinateur est éteint et que sa carte réseau ne traite plus les paquets envoyés par le cable réseau.
+ordinateur est éteint et que sa carte réseau ne traite plus les paquets transmis par le cable réseau.
 
 ## Job 8
 
