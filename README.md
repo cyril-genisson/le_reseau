@@ -179,9 +179,7 @@ auquel il est connecté prend en charge le full-duplex, le domaine de collision 
 
 - Faire un schéma de votre réseau
 (Doit représenter la topologie et la configuration du réseau en incluant les composants)
-
 ![Schéma du réseau](./pictures/DiagrammeResau.jpg "Réseau")
-
 
 - Identifier au moins trois avantages importants d'avoir un schéma
 
@@ -333,6 +331,7 @@ Tableau des sept couches du modèle OSI (description des rôles de chaque couche
 |   1   |   Physique    |   Encodage du signal, câblage et connecteurs, spécifications physiques    |
 
 Associez les différentes matériels ou protocoles aux couches
+
 | **Matériel / Protocole**  |   **Couche**  |
 |:--:    |:--:    |
 |   Ethernet    |   1   |
