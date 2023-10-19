@@ -330,9 +330,10 @@ Tableau des sept couches du modèle OSI (description des rôles de chaque couche
 |   2   |   Liaison de données  |   Adresse localement les interfaces, livre les informations localement, méthode MAC   |
 |   1   |   Physique    |   Encodage du signal, câblage et connecteurs, spécifications physiques    |
 
-Associez les différentes matériels ou protocoles aux couches
+Associez les différentes matériels ou protocoles aux couches:
 
-| **Matériel / Protocole**  |   **Couche**  |
+
+| Matériel-Protocole  |   Couche  |
 |:--:    |:--:    |
 |   Ethernet    |   1   |
 |   TCP |   4-5   |
