@@ -354,7 +354,7 @@ Associez les différentes matériels ou protocoles aux couches:
 
 - Quell est l'architecture de ce réseau?
 
-Taupologie en étoile
+Topologie en étoile
 
 - Indiquer quelle est l'adresse IP du réseau?
 
