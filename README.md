@@ -203,7 +203,7 @@ donc une mutualisation de la ressource.
                     Plan d'adressage
 \******************************************************/
 Attribution d'une adresse de classe A: 10.0.0.0
-Création de 16 sous-réseau(x) pour 322 hôtes:
+Création de 16 sous-réseau(x) pour 1562 hôtes:
 
 ****************************************************
         CIDR: 28        NETMASK= 255.255.255.240
