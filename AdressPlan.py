@@ -136,7 +136,7 @@ def PrintNetwork(network):
     sumL, sumH, ip = 0, 0, Ip.split(".")
     for k in range(len(network)):
         sumL += network[k][0]
-        sumH += network[k][1]
+        sumH += network[k][1] * network[k][0]
 
     print("/******************************************************\\")
     print("\t\t\tPlan d'adressage")
